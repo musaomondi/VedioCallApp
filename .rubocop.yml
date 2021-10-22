@@ -21,23 +21,7 @@ Metrics/AbcSize:
   Enabled: false
 Metrics/MethodLength:
   Enabled: false
-Lint/UselessAssignment:
-  Enabled: false
-Style/MultilineIfModifier:
-  Enabled: false
-Metrics/ClassLength:
-  Enabled: false
-Naming/VariableName:
-  Enabled: false
-Rails/HasManyOrHasOneDependent:
-  Enabled: false
-Lint/EmptyFile:
-  Enabled: false
-Naming/MethodParameterName:
-  Enabled: false
-Security/Open:
-  Enabled: false
-Naming/FileName:
+Naming/MethodName:
   Enabled: false
 Rails/BulkChangeTable:
   Enabled: false

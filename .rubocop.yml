@@ -1,0 +1,43 @@
+require: rubocop-rails
+AllCops:
+  NewCops: enable
+Style/Documentation:
+  Enabled: false
+Rails/FilePath:
+  Enabled: false
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+Lint/NonLocalExitFromIterator:
+  Enabled: false
+Style/RedundantBegin:
+  Enabled: false
+Style/MultilineTernaryOperator:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Lint/UselessAssignment:
+  Enabled: false
+Style/MultilineIfModifier:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Naming/VariableName:
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+Lint/EmptyFile:
+  Enabled: false
+Naming/MethodParameterName:
+  Enabled: false
+Security/Open:
+  Enabled: false
+Naming/FileName:
+  Enabled: false
+Rails/BulkChangeTable:
+  Enabled: false

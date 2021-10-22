@@ -223,3 +223,10 @@ body {
   }
 }//========================== Auth form =====================
 
+// ========= Bootstrap notification ==========
+.notice, .danger {
+  margin: 0px;
+  p {
+    margin-bottom: 0px;
+  }
+}// ========= Bootstrap notification ==========

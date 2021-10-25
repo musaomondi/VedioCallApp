@@ -2,7 +2,7 @@
   <% if user.avatar.attached? %>
     <%= image_tag user.avatar %>
   <% else %>
-    <img src="assets/avatar5.jpeg" alt="">
+    <img src="<%= image_path('avatar5.jpeg') %>" alt="">
   <% end %>
   <h6 class="dev-name text-white">
     <%= user.name %>

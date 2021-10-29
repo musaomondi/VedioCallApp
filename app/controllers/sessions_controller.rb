@@ -6,7 +6,6 @@ class SessionsController < Devise::SessionsController
     end
 
     super
-
   end
 
   private

@@ -1,3 +1,5 @@
+import roomSubscriber from '../channels/room_channel'
+
 document.addEventListener('DOMContentLoaded', (event) => {
   /* Avatar upload functionality for user registration */
   var readURL = function(input) {
@@ -42,6 +44,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
       onlineBtn.style.backgroundColor = "#3DC794"
       onlineBtn.style.borderColor = "#3DC794"
       onlineBtn.innerHTML = "You are online"
+    })
+  }
+  // Add an event listener to call buttons
+  var cameraIcons = document.getElementsByClassName('camera-icon');
+  for (let item of cameraIcons) {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      var recipient_id = item.getAttribute("data-id");
+      var recipient_name = item.getAttribute("data-name");
+      console.log(recipient_id);
+      console.log(recipient_name);
+      var recipient_name_modal =
+        document.getElementById('recipient_name_modal');
+      recipient_name_modal.innerHTML = recipient_name;
+      $('#sender-notif-modal').modal('show');
+      roomSubscriber.call(recipient_id);
     })
   }
 })

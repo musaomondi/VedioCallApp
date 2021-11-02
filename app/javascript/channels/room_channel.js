@@ -29,6 +29,14 @@ const roomSubscriber = consumer.subscriptions.create("RoomChannel", {
     return this.perform('call', {
       recipient_id: recipient_id
     });
+  },
+
+  answer(session_id, sender_id) {
+    console.log(`Hello from the answer method: ${session_id}`);
+    return this.perform('answer', {
+      session_id: session_id,
+      sender_id: sender_id
+    });
   }
 });
 

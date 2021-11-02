@@ -62,5 +62,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
       roomSubscriber.call(recipient_id);
     })
   }
+
+  // Call the answer method when the answer_btn is clicked.
+  const answerBtn = document.getElementById("answer-call");
+  answerBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    var session_id = document.getElementById("session_id").innerHTML;
+    var sender_id = document.getElementById('sender_id').innerHTML;
+    console.log(session_id);
+    console.log("answer btn clicked");
+    $('#receiver-notif-modal').modal('hide');
+    roomSubscriber.answer(session_id, sender_id);
+  });
 })
 

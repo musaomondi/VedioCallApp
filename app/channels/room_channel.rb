@@ -15,8 +15,8 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def answer(data)
-    session_id = data["session_id"]
-    sender_id = data["sender_id"]
+    session_id = data['session_id']
+    sender_id = data['sender_id']
     broadcast_session_to_recipient(session_id)
     broadcast_session_to_sender(session_id, sender_id)
   end
@@ -26,7 +26,7 @@ class RoomChannel < ApplicationCable::Channel
   def broadcast_notif_to_recipient(recipient_id, session_id)
     ActionCable.server.broadcast(
       "room_#{recipient_id}",
-      sender_first_name: current_user.name,
+      sender_name: current_user.name,
       sender_id: current_user.id,
       session_id: session_id,
       step: 'receiving the call'
@@ -46,7 +46,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def create_session
-    opentok.create_session :media_mode => :routed
+    opentok.create_session media_mode: 'routed'
   end
 
   def create_token(session_id)

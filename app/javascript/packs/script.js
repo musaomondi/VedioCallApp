@@ -8,19 +8,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
       reader.onload = function (e) {
         $('.profile-pic').attr('src', e.target.result);
       }
-      reader.readAsDataURL(input.files[0])
+      reader.readAsDataURL(input.files[0]);
     }
   }
-  $('.file-upload').on('change', function(){
+
+  $(".file-upload").on('change', function(){
     readURL(this);
   });
-  $('.upload-button').on('click', function(){
-    $('.file-upload').click();
+
+  $(".upload-button").on('click', function() {
+    $(".file-upload").click();
   });
-  /* Initialize tooltips */
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
+
   /* Scroll to the developers section when the start button is clicked */
   const startBtn = document.getElementById('js-start-btn')
   const devSection = document.getElementById('js-developers')
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       onlineBtn.innerHTML = "You are online"
     })
   }
-  // Add an event listener to call buttons
+
   var cameraIcons = document.getElementsByClassName('camera-icon');
   for (let item of cameraIcons) {
     item.addEventListener('click', (event) => {
@@ -55,8 +54,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       var recipient_name = item.getAttribute("data-name");
       console.log(recipient_id);
       console.log(recipient_name);
-      var recipient_name_modal =
-        document.getElementById('recipient_name_modal');
+      var recipient_name_modal = document.getElementById('recipient_name_modal');
       recipient_name_modal.innerHTML = recipient_name;
       $('#sender-notif-modal').modal('show');
       roomSubscriber.call(recipient_id);
@@ -75,4 +73,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     roomSubscriber.answer(session_id, sender_id);
   });
 })
-
